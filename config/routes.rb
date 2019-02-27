@@ -9,4 +9,14 @@ Rails.application.routes.draw do
 
   get "/products" => "api/products#show"
 
+  get "/rock_tshirt" => "api/products#rock_tshirt"
+
+  get "/cat_brush" => "api/products#cat_brush"
+
+  get "/fish_food" => "api/products#fish_food"
+
+  get "/sun_tan_lotion" => "api/products#sun_tan_lotion"
+
+  get "/alarm_clock" => "api/products#alarm_clock"
+
 end
