@@ -2,7 +2,10 @@ require "http"
 
 response = HTTP.get("http://localhost:3000/products")
 
-puts response.parse
+
+table = TTY::Table.new ['header1','header2'], [['a1', 'a2'], ['b1', 'b2']]
+
+table.render(:ascii)
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).

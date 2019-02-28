@@ -9,45 +9,14 @@ class Api::ProductsController < ApplicationController
 
   end
 
-  def rock_tshirt
+  def find_by_title
+    @search_id = params["search_id"].to_i
+    @results = Product.where("id": @search_id)
 
-    @rock_tshirt = Product.where(name: "rock tshirt")
+    puts @results
 
-    render "t_shirt.json.jbuilder"
-
-  end
-
-  def alarm_clock
-
-    @alarm_clock = Product.where(name: "Alarm clock")
-
-    render "alarm_clock.json.jbuilder"
+    render "search_results.json.jbuilder"
 
   end
-
-  def cat_brush
-
-    @cat_brush = Product.where(name: "Cat Brush")
-
-    render "cat_brush.json.jbuilder"
-
-  end
-
-  def fish_food
-
-    @fish_food = Product.where(name: "Fish Food")
-
-    render "fish_food.json.jbuilder"
-
-  end
-
-  def sun_tan_lotion
-
-    @sun_tan_lotion = Product.where(name: "SunTan Lotion")
-
-    render "suntan_lotion.json.jbuilder"
-
-  end
-
 
 end
