@@ -1,1 +1,0 @@
-json.cat_brush @cat_brush

@@ -1,1 +1,0 @@
-json.lotion @sun_tan_lotion

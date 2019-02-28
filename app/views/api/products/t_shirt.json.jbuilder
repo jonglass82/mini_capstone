@@ -1,1 +1,0 @@
-json.tshirt @rock_tshirt

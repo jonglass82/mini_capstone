@@ -1,1 +1,0 @@
-json.fish_food @fish_food
