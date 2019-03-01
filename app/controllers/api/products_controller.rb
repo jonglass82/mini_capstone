@@ -31,14 +31,26 @@ class Api::ProductsController < ApplicationController
 
 
     # @new_product = Product.create(name: @name, price: @price, image_url: @image_url , description: @description) 
-    
+
   end
 
   def update
-    @product = Product.find_by_id(:id)
+    @id = params["id"]
+
+    @product = Product.find_by_id(@id)
+
+    @product.update("name": "Jon")
+
   end
 
+
   def destroy
+
+    puts "using the delete method"
+
+    @id = params["id"]
+
+    @product = Product.destroy(@id)
 
   end
 
