@@ -35,11 +35,11 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    @id = params["id"]
+    # @id = params["id"]
 
     @product = Product.find_by_id(@id)
 
-    @product.update("name": "Jon")
+    # @product.update("name": "Jon")
 
   end
 
