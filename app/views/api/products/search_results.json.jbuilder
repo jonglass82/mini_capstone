@@ -1,2 +1,3 @@
-json.search @search_id
 json.results @results
+
+# json.results @results.images

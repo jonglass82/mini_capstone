@@ -1,0 +1,1 @@
+json.partial! "products.json.jbuilder" products: @product

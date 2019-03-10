@@ -5,18 +5,34 @@ class Api::ProductsController < ApplicationController
 
     @products = Product.all
 
+    search_name = params["search"]
+
+    if search_name
+      @products = @products.where("name ILIKE ?", "%#{search_name}%")
+    end
+
+    search_price = params[]
+
+    @products = @products.order(:id => :asc)
+
     render "products.json.jbuilder"
 
   end
 
   def find_by_title
-    @search_id = params["search_id"].to_i
-    @results = Product.where("id": @search_id)
+    @search_id = params["search_id"]
+    @results = Product.find_by_id(@search_id)
 
     puts @results
 
     render "search_results.json.jbuilder"
 
+  end
+
+  def show
+    @id = params["id"]
+
+    @product = Product.find_by_id(@id)
   end
 
 
@@ -30,23 +46,32 @@ class Api::ProductsController < ApplicationController
     @description = params["description"]
 
 
-    # @new_product = Product.create(name: @name, price: @price, image_url: @image_url , description: @description) 
+    product = Product.new(name: @name, price: @price, image_url: @image_url , description: @description) 
+
+    if product.save
+      render "search_results.json.jbuilder"
+    else
+      render json: {errors: @product.errors.full_messages}, status: 422
+    end
 
   end
 
   def update
-    # @id = params["id"]
+
+    @id = params[:id]
 
     @product = Product.find_by_id(@id)
 
-    # @product.update("name": "Jon")
+    if @product.update(name: "Jon")
+      render "search_results.json.jbuilder"
+    else
+      render json: {errors: @product.errors.full_messages}, status: 422
+    end
 
   end
 
 
   def destroy
-
-    puts "using the delete method"
 
     @id = params["id"]
 
