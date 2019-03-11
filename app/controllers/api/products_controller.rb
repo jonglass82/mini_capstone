@@ -1,6 +1,5 @@
 class Api::ProductsController < ApplicationController
 
-
   def index
 
     @products = Product.all
@@ -10,8 +9,6 @@ class Api::ProductsController < ApplicationController
     if search_name
       @products = @products.where("name ILIKE ?", "%#{search_name}%")
     end
-
-    search_price = params[]
 
     @products = @products.order(:id => :asc)
 
@@ -33,12 +30,12 @@ class Api::ProductsController < ApplicationController
     @id = params["id"]
 
     @product = Product.find_by_id(@id)
+
+     render "products.json.jbuilder"
   end
 
 
   def create
-
-    puts "using the create method"
 
     @name = params["name"]
     @price = params["price"]
