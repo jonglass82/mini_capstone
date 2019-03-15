@@ -1,5 +1,9 @@
 class Api::ProductsController < ApplicationController
 
+
+  before_action :authenticate_admin, except: [:index, :show]
+
+
   def index
 
     @products = Product.all
@@ -16,7 +20,10 @@ class Api::ProductsController < ApplicationController
 
   end
 
+
+
   def find_by_title
+
     @search_id = params["search_id"]
     @results = Product.find_by_id(@search_id)
 
@@ -26,7 +33,10 @@ class Api::ProductsController < ApplicationController
 
   end
 
+
+
   def show
+
     @id = params["id"]
 
     @product = Product.find_by_id(@id)
@@ -37,21 +47,23 @@ class Api::ProductsController < ApplicationController
 
   def create
 
-    @name = params["name"]
-    @price = params["price"]
-    @image_url = params["image_url"]
-    @description = params["description"]
+      @name = params["name"]
+      @price = params["price"]
+      @image_url = params["image_url"]
+      @description = params["description"]
 
 
-    product = Product.new(name: @name, price: @price, image_url: @image_url , description: @description) 
+      product = Product.new(name: @name, price: @price, image_url: @image_url , description: @description) 
 
-    if product.save
-      render "search_results.json.jbuilder"
-    else
-      render json: {errors: @product.errors.full_messages}, status: 422
-    end
+      if product.save
+        render "search_results.json.jbuilder"
+      else
+        render json: {errors: @product.errors.full_messages}, status: 422
+      end
 
   end
+
+
 
   def update
 

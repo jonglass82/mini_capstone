@@ -16,15 +16,26 @@
 
 # supplier = Supplier.create(name:"Johnson & Johnson", email:"ned@jj.com", phone_number:"888-889-7043")
 
-image = Image.create(url:"https://s7d2.scene7.com/is/image/PetSmart/1031529?$sclp-prd-main_large$", product_id: 3)
+Category.create(name: "Clothing")
+Category.create(name: "Pet food")
+Category.create(name: "Household")
 
-image = Image.create(url:"https://ocs-pl.oktawave.com/v1/AUTH_e1d5d90a-20b9-49c9-a9cd-33fc2cb68df3/mrgugu-products/20170731123925_iTCTWqRlGBL0O9gH_1000-1000.jpg", product_id: 1)
+CategoryProduct.create(category_id: 1, product_id: 1)
+CategoryProduct.create(category_id: 2, product_id: 2)
+CategoryProduct.create(category_id: 3, product_id: 3)
+CategoryProduct.create(category_id: 4, product_id: 4)
+CategoryProduct.create(category_id: 5, product_id: 5)
+CategoryProduct.create(category_id: 6, product_id: 6)
 
-image = Image.create(url:"http://www.blamnewsdaily.com/wp-content/uploads/2016/11/15-cool-and-crazy-products-you-can-buy-online-1.jpg", product_id: 6)
+# image = Image.create(url:"https://s7d2.scene7.com/is/image/PetSmart/1031529?$sclp-prd-main_large$", product_id: 3)
 
-image = Image.create(url:"https://i5.walmartimages.com/asr/d3d8b574-a52e-40d0-9983-cad106ef899b_1.745d8e1c2faaee25f70cf4ba47603d59.jpeg", product_id: 4)
+# image = Image.create(url:"https://ocs-pl.oktawave.com/v1/AUTH_e1d5d90a-20b9-49c9-a9cd-33fc2cb68df3/mrgugu-products/20170731123925_iTCTWqRlGBL0O9gH_1000-1000.jpg", product_id: 1)
 
-image = Image.create(url:"https://images-na.ssl-images-amazon.com/images/G/01/aplusautomation/vendorimages/9fc6d2f2-8f22-4821-8d66-47c46730bbb5.jpg._CB296665598_.jpg", product_id: 5)
+# image = Image.create(url:"http://www.blamnewsdaily.com/wp-content/uploads/2016/11/15-cool-and-crazy-products-you-can-buy-online-1.jpg", product_id: 6)
+
+# image = Image.create(url:"https://i5.walmartimages.com/asr/d3d8b574-a52e-40d0-9983-cad106ef899b_1.745d8e1c2faaee25f70cf4ba47603d59.jpeg", product_id: 4)
+
+# image = Image.create(url:"https://images-na.ssl-images-amazon.com/images/G/01/aplusautomation/vendorimages/9fc6d2f2-8f22-4821-8d66-47c46730bbb5.jpg._CB296665598_.jpg", product_id: 5)
 
 
 
